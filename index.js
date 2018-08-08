@@ -5,6 +5,7 @@ function getInputs(data) {
 	for (var el in data) {
 		if (data.hasOwnProperty(el)) {
 			var input = document.createElement('input');
+			input.setAttribute('type', 'hidden');
 
 			input.name = el;
 			input.value = data[el];
