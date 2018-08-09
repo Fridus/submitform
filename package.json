@@ -13,7 +13,11 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo"
+    "build": "browserify test/test.js > test/tmp.js",
+    "lint": "xo",
+    "mocha": "mocha --opts mocha.opts '*.spec.js'",
+    "server": "serve test",
+    "test": "npm run build && npm run mocha"
   },
   "files": [
     "index.js"
@@ -30,7 +34,15 @@
     "submitter"
   ],
   "devDependencies": {
-    "xo": "*"
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browserify": "^16.2.2",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.6.2",
+    "serve": "^9.4.0",
+    "xo": "^0.22.0"
   },
   "xo": {
     "envs": [
