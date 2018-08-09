@@ -7,7 +7,7 @@ import { parseQueryString, convertDataValues } from './test/util'
 
 let browser
 const browserOptions = {
-  headless: false,
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
   slowMo: 100,
   timeout: 10000
 }
